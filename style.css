@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 80%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9933 0%, #fff 50%, #138808 100%);
+    min-height: 100vh;
+    color: #222;
+    animation: bgMove 10s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+header {
+    background: linear-gradient(90deg, #ff9933 0%, #fff 50%, #138808 100%);
+    background-size: 200% 100%;
+    animation: headerBgMove 8s linear infinite alternate;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    opacity: 0.97;
+}
+
+@keyframes headerBgMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.Logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem 1rem;
+    gap: 2rem;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 1.2rem;
+    background: #fff;
+    padding: 8px;
+    box-shadow:
+        0 0 24px 6px #ff9933,
+        0 0 48px 12px #fff,
+        0 0 72px 18px #138808;
+    border: 8px solid transparent;
+    /* Animated tricolor border */
+    background: linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(135deg, #ff9933, #fff 33%, #fff 66%, #138808) border-box;
+    position: relative;
+    z-index: 1;
+    animation:
+        borderAnim 4s linear infinite,
+        glowAnim 3s ease-in-out infinite alternate;
+}
+
+@keyframes borderAnim {
+    0% {
+        background: linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(135deg, #ff9933, #fff 33%, #fff 66%, #138808) border-box;
+    }
+    100% {
+        background: linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(495deg, #ff9933, #fff 33%, #fff 66%, #138808) border-box;
+    }
+}
+
+@keyframes glowAnim {
+    0% {
+        box-shadow:
+            0 0 24px 6px #ff9933,
+            0 0 48px 12px #fff,
+            0 0 72px 18px #138808;
+    }
+    50% {
+        box-shadow:
+            0 0 36px 12px #ff9933,
+            0 0 60px 18px #fff,
+            0 0 90px 24px #138808;
+    }
+    100% {
+        box-shadow:
+            0 0 24px 6px #ff9933,
+            0 0 48px 12px #fff,
+            0 0 72px 18px #138808;
+    }
+}
+
+.content {
+    background: rgba(255,255,255,0.97);
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2.5rem 3rem;
+    margin: 1rem 0;
+    max-width: 520px;
+    min-width: 280px;
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.content h1 {
+    font-size: 2.7rem;
+    color: #ff9933;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    /* Animated tricolor gradient text for heading */
+    background: linear-gradient(90deg, #ff9933, #fff, #138808, #ff9933);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: textGradient 3s linear infinite;
+}
+
+@keyframes textGradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.content p, .content li {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+    line-height: 1.7;
+}
+
+.content ul {
+    padding-left: 1.3rem;
+    margin: 1rem 0;
+}
+
+.content li {
+    font-size: 1.18rem;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1.2rem 0 0.8rem 0;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    margin: 0.2rem 0;
+}
+
+/* Fade-in and slide-up for .content and .image */
+.content, .image {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.image {
+    animation-delay: 0.2s;
+}
+
+.content {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-line {
+    height: 5px;
+    width: 100%;
+    background: linear-gradient(90deg, #ff9933 0%, #fff 50%, #138808 100%);
+    background-size: 200% 100%;
+    animation: headerBgMove 8s linear infinite alternate;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.header-flag {
+    display: block;
+    margin: 0.7rem auto 0 auto;
+    max-width: 70px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    animation: fadeInFlag 1.2s ease;
+}
+
+@keyframes fadeInFlag {
+    from { opacity: 0; transform: scale(0.8);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+@media (max-width: 900px) {
+    .home {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .content {
+        padding: 1.2rem 1rem;
+    }
+    .image img {
+        max-width: 90vw;
+    }
+}
